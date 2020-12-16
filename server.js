@@ -24,7 +24,7 @@ app.get('/notes', function(req,res){
 
 
 // Link to the database file in JSON format to be read to show notes created
-let notes = JSON.parse(fs.readFileSync('/db/db.json','utf8'));
+let notes = JSON.parse(fs.readFileSync('db/db.json','utf8'));
 
 // Link to the notes.html code to be loaded along with the JSON 
 
@@ -37,7 +37,7 @@ app.post('/api/notes', function(req,res) {
     ShortUniqueId();
 
     notes.push(newNote);
-    fs.writeFile('/db/db.json', JSON.stringify(notes), 'utf8', function(err){
+    fs.writeFile('db/db.json', JSON.stringify(notes), 'utf8', function(err){
         if(err)throw err;
         res.json(newNote);
     });
