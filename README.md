@@ -16,7 +16,7 @@
 
 
 ## Installation  
-For end-users, browsing to the address https://browser-note-taker.herokuapp.com/ will allow for use of the note-taking application. For developers looking to utilize this open-source code to adapt into another application or bundle, copying this repository's content (https://github.com/hector-gm/note_taker) and installing the npm dependencies will enable its use in your development environment.
+For end-users, browsing to the address https://lit-eyrie-34294.herokuapp.com/ will allow for use of the note-taking application. For developers looking to utilize this open-source code to adapt into another application or bundle, copying this repository's content (https://github.com/hector-gm/note_taker) and installing the npm dependencies will enable its use in your development environment.
 
 ## Usage  
 Users can quickly create new notes that will be saved for future reference. Note deletion will be an added feature in the future.
