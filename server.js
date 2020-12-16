@@ -5,8 +5,6 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const id = ShortUniqueId();
-
 const PORT = process.env.PORT || 3000;  // ***NECESSARY*** variable value along with PORT specification to run the app in Heroku, avoids error R10
 
 // Set Express to handle data
@@ -25,23 +23,15 @@ app.get('/notes', function(req,res){
 
 
 // Link to the database file in JSON format to be read to show notes created
-let notes = JSON.parse(fs.readFileSync('/db/db.json','utf8'));
+fs.readFileSync('db/db.json','utf8', (error,data)=>{
+    if(error)throw error;
+
+    const notes = JSON.parse(data);
 
 // Link to the notes.html code to be loaded along with the JSON 
 
-app.get('/api/notes', function(req,res){
+    app.get('/api/notes', function(req,res){
         res.JSON(notes);
-    });
-
-app.post('/api/notes', (req,res)=>{
-    const newNote = req.body;
-    id();
-
-    notes.push(newNote);
-
-    fs.writeFile('/db/db.json', JSON.stringify(notes),'utf8',function(err){
-        if(err)throw err;
-        res.json(newNote);
     });
 });
 
