@@ -4,22 +4,24 @@
 # Browser Note Taker: Powered by Express  
 
 ## Description   
-    This Note Taker application is meant to be deployed on a browser and used to quickly create notes using the Express framework for Node.js
+    This Note Taker application is meant to be deployed on a browser and used to 
+    create notes using the Express framework for Node.js to write to a database.
 
 ## Table of Contents 
-    *[Installation](#installation) 
-    *[Usage](#usage)
-    *[License](#license) 
-    *[Contributing Guidelines](#contributing) 
-    *[Tests](#tests) 
-    *[Questions](#questions)
+*[Installation](#installation) 
+*[Usage](#usage)
+*[License](#license) 
+*[Contributing Guidelines](#contributing) 
+*[Tests](#tests) 
+*[Questions](#questions)
 
 
 ## Installation  
 For end-users, browsing to the address https://lit-eyrie-34294.herokuapp.com/ will allow for use of the note-taking application. For developers looking to utilize this open-source code to adapt into another application or bundle, copying this repository's content (https://github.com/hector-gm/note_taker) and installing the npm dependencies will enable its use in your development environment.
 
 ## Usage  
-Users can quickly create new notes that will be saved for future reference. Note deletion will be an added feature in the future.
+Users can quickly create new notes that will be saved for future reference. 
+Note deletion will be an added feature in the future.
 
 ## License  
 MIT License 
