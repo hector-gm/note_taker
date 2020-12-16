@@ -1,9 +1,9 @@
 // Declare dependecies
 const express = require('express');
-const uid = require('short-unique-id');
+// const uid = require('short-unique-id');
 const fs = require('fs');
 const path = require('path');
-const { default: ShortUniqueId } = require('short-unique-id');
+// const { default: ShortUniqueId } = require('short-unique-id');
 
 const app = express();
 const PORT = process.env.PORT || 3000;  // ***NECESSARY*** variable value along with PORT specification to run the app in Heroku, avoids error R10
@@ -15,11 +15,11 @@ app.use(express.json());
 // Define routes for the directory paths to use HTML files
 
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'/public/index.html'))
+    res.sendFile(path.join(__dirname +'/public/index.html'))
 })
 
 app.get('/notes', function(req,res){
-    res.sendFile(path.join(__dirname+'/public/notes.html'))
+    res.sendFile(path.join(__dirname +'/public/notes.html'))
 });
 
 
@@ -34,15 +34,21 @@ app.get('/api/notes', function(req,res){
 
 app.post('/api/notes', function(req,res) {
     const newNote = req.body;
-    ShortUniqueId();
+    noteId();
 
     noteList.push(newNote);
+
     fs.writeFile('./db/db.json', JSON.stringify(noteList), 'utf8', function(err){
         if(err)throw err;
         res.json(newNote);
     });
 });
 
+const noteId = () => {
+    for (i=0; i<noteList.length; i++) {
+        noteList[i].id = i+1;
+    }
+};
 // Log the communication link with the server
 
 app.listen(PORT, function(){
