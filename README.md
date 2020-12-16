@@ -16,12 +16,10 @@
 
 
 ## Installation  
-For end-users, browsing to the address https://hector-gm.github.io/note_taker/ will allow for use of the note-taking application. For developers looking to utilize this open-source code to adapt into another application or bundle, copying this repository's content and installing the npm dependencies will enable its use in your development environment.
+For end-users, browsing to the address https://browser-note-taker.herokuapp.com/ will allow for use of the note-taking application. For developers looking to utilize this open-source code to adapt into another application or bundle, copying this repository's content (https://github.com/hector-gm/note_taker) and installing the npm dependencies will enable its use in your development environment.
 
 ## Usage  
 Users can quickly create new notes that will be saved for future reference. Note deletion will be an added feature in the future.
-
-Check a video of the application walkthrough here: https://drive.google.com/file/d/1SG2Glr5Fx_iS49lccHiWTD1TQ1r6WolC/preview.
 
 ## License  
 MIT License 
@@ -33,7 +31,7 @@ The Contributor Covenant Code of Conduct
 https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md is applicable. 
 
 ## Tests  
-None planned at the moment 
+ 
 
 ## Questions 
 Email: hgarcia.millares@gmail.com  
