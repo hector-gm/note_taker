@@ -49,6 +49,14 @@ const noteId = () => {
         noteList[i].id = i+1;
     }
 };
+
+app.delete('/api/notes/:id', (req,res) => {
+    notes = noteList.filter(n => n.id != req.params.id);
+    fs.writeFile('/db/db.json', JSON.stringify(notes), (err) => {
+        if(err)throw err;
+        res.JSON(notes)
+    });
+});
 // Log the communication link with the server
 
 app.listen(PORT, function(){
