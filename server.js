@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const uid = ShortUniqueId();
+const id = ShortUniqueId();
 
 const PORT = process.env.PORT || 3000;  // ***NECESSARY*** variable value along with PORT specification to run the app in Heroku, avoids error R10
 
@@ -35,7 +35,7 @@ app.get('/api/notes', function(req,res){
 
 app.post('/api/notes', (req,res)=>{
     const newNote = req.body;
-    new uid;
+    id();
 
     notes.push(newNote);
 
