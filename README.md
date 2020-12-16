@@ -21,7 +21,6 @@ For end-users, browsing to the address https://hector-gm.github.io/note_taker/ w
 ## Usage  
 Users can quickly create new notes that will be saved for future reference. Note deletion will be an added feature in the future.
 
-Check a video of the application walkthrough here: https://drive.google.com/file/d/1SG2Glr5Fx_iS49lccHiWTD1TQ1r6WolC/preview.
 
 ## License  
 MIT License 
