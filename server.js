@@ -1,4 +1,5 @@
 // Refactored the project using the HotRestaurant example from week 11 
+// Splitting the html and api routes into different files
 
 // Declare express dependency, other node dependecies listed in the apiRoutes and htmlRoutes js files in Assets folder
 
