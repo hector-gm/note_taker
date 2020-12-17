@@ -8,13 +8,13 @@ const { default: ShortUniqueId } = require('short-unique-id');
 module.exports = (app) => {
     // Access defined to read the db.json file's content
     const readDB = () => {
-        const data = fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf8');
+        const data = fs.readFileSync(path.join(__dirname, 'db/db.json'), 'utf8');
         return JSON.parse(data);
     }
 
     // Access set to write into the db.json file
     const writeDB = (notes) => {
-        fs.writeFileSync(path.join(__dirname, '../db/db.json'), JSON.stringify(notes)); 
+        fs.writeFileSync(path.join(__dirname, 'db/db.json'), JSON.stringify(notes)); 
     }
 
     app.get('/api/notes', (req,res) => {
