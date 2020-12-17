@@ -1,9 +1,8 @@
-// Declare dependecies
+// Refactored the project using the HotRestaurant example from week 11 
+
+// Declare express dependency, other node dependecies listed in the apiRoutes and htmlRoutes js files in Assets folder
+
 const express = require('express');
-// const uid = require('short-unique-id');
-const fs = require('fs');
-const path = require('path');
-// const { default: ShortUniqueId } = require('short-unique-id');
 
 const app = express();
 const PORT = process.env.PORT || 3000;  // ***NECESSARY*** variable value along with PORT specification to run the app in Heroku, avoids error R10
@@ -11,55 +10,14 @@ const PORT = process.env.PORT || 3000;  // ***NECESSARY*** variable value along 
 // Set Express to handle data
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+app.use(express.static('public'));
 
-// Define routes for the directory paths to use HTML files
+// Call on the js files to handle the other files
+require('./public/assets/js/apiRoutes')(app);
+require('./public/assets/js/htmlRoutes')(app);
 
-app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname +'/public/index.html'))
-})
-
-app.get('/notes', function(req,res){
-    res.sendFile(path.join(__dirname +'/public/notes.html'))
-});
-
-
-// Link to the database file in JSON format to be read to show notes created
-let noteList = JSON.parse(fs.readFileSync('db/db.json','utf8'));
-
-// Link to the notes.html code to be loaded along with the JSON 
-
-app.get('/api/notes', function(req,res){
-        res.JSON(noteList)
-    });
-
-app.post('/api/notes', function(req,res) {
-    const newNote = req.body;
-    noteId();
-
-    noteList.push(newNote);
-
-    fs.writeFile('db/db.json', JSON.stringify(noteList), 'utf8', function(err){
-        if(err)throw err;
-        res.json(newNote);
-    });
-});
-
-const noteId = () => {
-    for (i=0; i<noteList.length; i++) {
-        noteList[i].id = i+1;
-    }
-};
-
-app.delete('/api/notes/:id', (req,res) => {
-    notes = noteList.filter(n => n.id != req.params.id);
-    fs.writeFile('db/db.json', JSON.stringify(notes), (err) => {
-        if(err)throw err;
-        res.JSON(notes)
-    });
-});
 // Log the communication link with the server
-
 app.listen(PORT, function(){
     console.log(`Success! Communicating via port ${PORT}`);
-})
+});
 
