@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;  // ***NECESSARY*** variable value along 
 // Set Express to handle data
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
+
 app.use(express.static('public'));
 
 // Call on the js files to handle the other files
